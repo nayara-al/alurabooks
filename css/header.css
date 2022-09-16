@@ -178,7 +178,7 @@
         display: none;
     }
 
-    .container__botao:checked ~ .container__rotulo > .item-categoria {
+    .container__botao:checked ~ .container__rotulo > .item__categoria {
         background: var(--degrade-azul);
         color: var(--branco);
     }
