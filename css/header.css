@@ -1,0 +1,237 @@
+.cabecalho {
+    background-color: var(--branco);
+    text-align: center;
+    position: relative;
+}
+
+.cabecalho__barra {
+    display: grid;
+    grid-template-columns: auto 1fr 1.5fr;
+    grid-row: 1;
+    list-style-type: none;
+    align-content: center;
+    align-items: center;
+    grid-template-areas: "esquerda centro direita";
+    text-align: center;
+    position: relative;
+}
+
+.item__logo {
+    display: flex;
+    grid-area: centro;
+    align-items: center;
+}
+
+.cabecalho__lista {
+    display: flex;
+    list-style-type: none;
+    grid-area: esquerda;
+}
+
+.cabecalho__item {
+    padding: 1.5em 0.5em;
+    text-transform: uppercase;
+}
+
+.lista__perfil {
+    display: flex;
+    justify-content: flex-end;
+    grid-area: direita;
+}
+
+.perfil__texto {
+    display: none;
+}
+
+.lista-perfil__item {
+    padding: 0 0.8em 0 0;
+}
+
+.favoritos__texto {
+    display: none;
+}
+
+.item__estante {
+    display: none;
+}
+
+.cabecalho__menu-hamburguer {
+    width: 24px;
+    height: 24px;
+    background-image: url(../img/header/Menu.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+    margin: 1em;
+}
+
+.container__botao:checked~.container__rotulo>.cabecalho__menu-hamburguer {
+    background-image: url(../img/header/Menu-Aberto.svg);
+}
+
+.categorias {
+    align-self: center;
+}
+
+.item__categoria {
+    display: none;
+}
+
+.logo__texto {
+    display: none;
+}
+
+.container__botao:checked~.container__rotulo {
+    background: var(--degrade-azul);
+    padding-top: 3em;
+}
+
+.lista__menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 60vw;
+}
+
+.container__botao {
+    display: none;
+}
+
+.container__botao:checked ~.lista__menu {
+    display: block;
+}
+
+.lista-menu__item, .lista-menu__titulo {
+    background-color: var(--branco);
+    padding: 1em;
+}
+
+.lista-menu__link {
+    background: var(--degrade-azul);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase;
+}
+
+
+@media screen and (min-width: 968px) {
+    .cabecalho__barra{
+        grid-template-columns: 1fr 1.5fr 1fr;
+    }
+
+    .cabecalho__logo {
+        padding: 0 1em;
+    }
+
+    .item__logo {
+        grid-area: esquerda;
+    }
+
+    .cabecalho__lista {
+        grid-area: centro;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .logo__texto, .logo__texto--negrito {
+
+        font-family: var(--font-secundaria);
+        font-size: 30px;
+    }
+
+    .logo__texto {
+        font-weight: 300;
+        display: block;
+    }
+
+    .logo__texto--negrito {
+        font-weight: 700;
+    }
+
+    .logo__texto {
+        display: inline-block;
+    }
+
+    .favoritos__texto {
+        display: inline-block;
+    }
+    
+    .item__link {
+        text-decoration: none;
+        color: var(--preto);
+    }
+    
+    .item__estante {
+        display: inline-block;
+    }
+
+    .item__categoria {
+        display: inline-block;
+    }
+    
+    .cabecalho__menu-hamburguer {
+        display: none;
+    }
+
+    .perfil__favoritos {
+        display: none;
+    }
+
+    .container__botao:checked ~ .container__rotulo > .item__categoria {
+        background: var(--degrade-azul);
+        color: var(--branco);
+    }
+
+    .lista-menu__item:hover {
+        background: var(--degrade-azul);
+    }
+
+    .lista-menu__item:hover > .lista-menu__link {
+        background: var(--branco);
+        -webkit-background-clip: text;
+    }
+
+    .lista__menu {
+        width: 30vw;
+    }
+}
+
+@media screen and (min-width: 1728px) {
+    .cabecalho__barra{
+        grid-template-columns: auto 1fr 1fr;
+    }
+
+    .cabecalho__logo {
+        padding: 0 1em;
+    }
+
+    .item__logo {
+        grid-area: esquerda;
+        padding: 1em 2em;
+    }
+
+    .cabecalho__item {
+        padding: 1.5em 2em;
+    }
+
+    .cabecalho__lista {
+        grid-area: centro;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .lista__perfil {
+        margin: 0 2em;
+    }
+
+    .lista-perfil__item {
+        display: flex;
+        align-items: center;
+    }
+
+    .perfil__texto {
+        display: block;
+        padding: 0 0.5em;
+    }
+}
